@@ -1,0 +1,16 @@
+.body{
+    background-color: whitesmoke;
+    padding: 6em;
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.adress{
+    display: flex;
+    justify-content: space-between;
+}

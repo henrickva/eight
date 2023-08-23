@@ -1,0 +1,18 @@
+.body{
+    background-color: whitesmoke ;
+}
+
+.username{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.profileInfo{
+    list-style-type: none;
+}
+.bio{
+    font-style: italic;
+}
+.profilePic{
+    border-radius: 100%;
+}
