@@ -27,7 +27,7 @@ export default function Dashboard(){
                 justifyContent: 'center',
             }}
         >
-                <Paper
+                <Box
                     sx={{
                         p:2,
                         width:'80%',
@@ -158,7 +158,7 @@ export default function Dashboard(){
                     </Paper>
 
                     
-                </Paper>
+                </Box>
         </Box>
         </>
     )

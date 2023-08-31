@@ -31,7 +31,7 @@ export default function Cadastro(){
                         }>
                         <TextField
                             required
-                            label="Nome"
+                            label="Name"
                             variant="filled"
                             sx={{my:1}} 
                             size="small"
@@ -39,7 +39,7 @@ export default function Cadastro(){
 
                             <TextField
                             required
-                            label="Sobrenome"
+                            label="Last Name"
                             variant="filled"
                             sx={{my:1}}
                             size="small" 
@@ -47,7 +47,7 @@ export default function Cadastro(){
 
                             <TextField
                             required
-                            label="Nome de usuário"
+                            label="Username"
                             variant="filled"
                             sx={{my:1}}
                             size="small" 
@@ -56,7 +56,7 @@ export default function Cadastro(){
                             <TextField
                             required
                             type="number"
-                            label="Idade"
+                            label="Age"
                             variant="filled"
                             sx={{my:1}}
                             size="small" 
@@ -64,14 +64,14 @@ export default function Cadastro(){
                             
                             <div className={style.adress}>
                                 <TextField
-                                label="País"
+                                label="Country"
                                 variant="filled"
                                 sx={{my:1, mr:1}}
                                 size="small"
                                 />
                                 
                                 <TextField
-                                label="Cidade"
+                                label="City"
                                 variant="filled"
                                 sx={{my:1}} 
                                 size="small"
@@ -94,7 +94,7 @@ export default function Cadastro(){
                             color='primary' 
                             variant="outlined"
                             >
-                            Cadastrar
+                            Register
                             </Button>
 
                         </Box>

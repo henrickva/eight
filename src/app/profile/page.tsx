@@ -1,10 +1,21 @@
-import { Box, Container, Paper } from "@mui/material";
+'use client'
+import { Box, Container, Modal, Paper } from "@mui/material";
 import style from './page.module.css'
 import Image from "next/image";
 import profilePic from '@/assets/profilePic.png'
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar"
+import Button from '@mui/material/Button';
+import AddBoxIcon from '@mui/icons-material/AddBox'
+import EditIcon from '@mui/icons-material/Edit';
+import { useState } from "react"
+import AddPost from "@/components/AddPost";
 
 export default function Profile(){
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return(
         <>
         <Navbar />
@@ -36,7 +47,7 @@ export default function Profile(){
                 <Image 
                     className={style.profilePic}
                     src={profilePic} 
-                    alt="aqui vai a foto de perfil" 
+                    alt="profile pic" 
                     width={100}
                     height={100}   
                 />
@@ -48,6 +59,45 @@ export default function Profile(){
                     mt:2,
                     p:3    
                 }}>
+                    <Box
+                        sx={{
+                            display:'flex', 
+                            justifyContent:'center'
+                        }}
+                    >
+                            <Button startIcon={<EditIcon />} href="/settings">
+                                 edit profile
+                            </Button>
+
+                            <Button startIcon={<AddBoxIcon />} onClick={handleOpen}>
+                                 add post
+                            </Button>
+
+                            <Modal 
+                                open={open} 
+                                onClose={handleClose} 
+                                sx={{
+                                    display:'flex', 
+                                    justifyContent:'center'
+                                }}>
+                                <Paper
+                                sx={
+                                    {
+                                        p: 2,
+                                        width:'50%',
+                                        m:'auto',
+                                        component:'form',
+                                        display:'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        
+                                    }}
+                                >
+                                    <AddPost />
+                                </Paper>
+                            </Modal>
+                    </Box>
                Postagens vão aqui
             </Paper>
             </Container>
