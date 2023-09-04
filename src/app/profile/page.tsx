@@ -1,5 +1,5 @@
 'use client'
-import { Box, Container, Modal, Paper } from "@mui/material";
+import { Box, Container, Modal, Paper} from "@mui/material";
 import style from './page.module.css'
 import Image from "next/image";
 import profilePic from '@/assets/profilePic.png'
@@ -12,13 +12,15 @@ import AddPost from "@/components/AddPost";
 
 export default function Profile(){
 
+    
+
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return(
-        <>
-        <Navbar />
+        <>       
+        <Navbar/>
         <Box 
             className={style.body}
             sx={{

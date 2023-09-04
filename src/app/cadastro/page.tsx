@@ -1,7 +1,9 @@
+'use client'
 import style from '@/app/cadastro/page.module.css'
 import { Box, Paper, Container} from '@mui/material';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
+
 
 export default function Cadastro(){
     return (
@@ -100,6 +102,6 @@ export default function Cadastro(){
                         </Box>
                     </Paper>
             </Container>
-        </Box>
+        </Box>                 
     )
 }

@@ -1,6 +1,6 @@
+'use client'
 import Navbar from "@/components/Navbar";
 import { Box, Button, Paper, TextField } from "@mui/material";
-import style from './page.module.css'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';

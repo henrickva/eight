@@ -1,12 +1,27 @@
 'use client'
-import { Box, Paper, Container} from '@mui/material';
+import { Box, Paper, Container, createTheme, ThemeProvider} from '@mui/material';
 import TextField from '@mui/material/TextField'
 import GoogleIcon from '@mui/icons-material/Google';
 import Button from '@mui/material/Button';
 import style from '@/app/page.module.css'
 
+
 export default function Home() {
+
+  const theme = createTheme({
+    typography:{
+        fontFamily:['Raleway'].join(','),
+    },
+    palette:{
+        primary:{
+            main: '#021649'
+        }
+    }
+  })
+
+
   return (
+    <ThemeProvider theme={theme}>
     <Box 
       className={style.body}
       sx={{
@@ -83,6 +98,6 @@ export default function Home() {
         </Paper>
       </Container>
       </Box>
-    
+      </ThemeProvider>
   )
 }

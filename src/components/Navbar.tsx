@@ -1,4 +1,5 @@
-import { Box, Button, Toolbar, Typography } from '@mui/material';
+'use client'
+import { Box, Button, Toolbar, Typography} from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import style from './Navbar.module.css'
 import SettingsIcon from '@mui/icons-material/Settings'
