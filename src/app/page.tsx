@@ -1,7 +1,7 @@
 'use client'
-import { Box, Paper, Container, createTheme, ThemeProvider} from '@mui/material';
+import { Box, Paper, Container} from '@mui/material';
 import TextField from '@mui/material/TextField'
-import GithubIcon from '@mui/icons-material/Github';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
 import style from '@/app/page.module.css'
 import { signIn} from 'next-auth/react'
@@ -82,7 +82,7 @@ export default function Home(){
                   sx={{my: 2, width: '50%'}}  
                   variant="outlined" 
                   >
-                    <GithubIcon className={style.logoGoogle} />
+                    <GitHubIcon className={style.logoGoogle} />
                   Login com GitHub
                 </Button>
             </Box>
