@@ -60,7 +60,7 @@ export default function Profile(){
 
                 <Image
                     className={style.profilePic}
-                    src={session?.user?.image} 
+                    src={profilePic} 
                     alt="profile pic" 
                     width={100}
                     height={100}   
