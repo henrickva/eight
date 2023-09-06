@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
 import Theme from '@/components/Theme.'
+import AuthProvider from '@/components/AuthProvider'
 const raleway = Raleway({ subsets: ['latin'], weight: ['400'] })
 
 export const metadata: Metadata = {
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
         <body className={raleway.className}>
-          <Theme>
-            {children}
-            <Footer />
-          </Theme>
+          <AuthProvider>
+            <Theme>
+              {children}
+              <Footer />
+            </Theme>
+          </AuthProvider>
         </body>
     </html>
   )

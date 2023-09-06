@@ -1,0 +1,14 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name": "Teste",
+            "lastName":"Teste",
+            "username":"henrickva",
+            "age": 20,
+            "country":"Brazil",
+            "city":"Itajubá",
+            "bio":"nada"
+        }
+    ]
+}

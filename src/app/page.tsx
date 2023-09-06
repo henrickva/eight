@@ -1,27 +1,15 @@
 'use client'
 import { Box, Paper, Container, createTheme, ThemeProvider} from '@mui/material';
 import TextField from '@mui/material/TextField'
-import GoogleIcon from '@mui/icons-material/Google';
+import GithubIcon from '@mui/icons-material/Github';
 import Button from '@mui/material/Button';
 import style from '@/app/page.module.css'
+import { signIn} from 'next-auth/react'
 
-
-export default function Home() {
-
-  const theme = createTheme({
-    typography:{
-        fontFamily:['Raleway'].join(','),
-    },
-    palette:{
-        primary:{
-            main: '#021649'
-        }
-    }
-  })
-
+export default function Home(){
+  
 
   return (
-    <ThemeProvider theme={theme}>
     <Box 
       className={style.body}
       sx={{
@@ -40,7 +28,7 @@ export default function Home() {
           <h1
             
             >
-            Seja Bem-vindo ao Eigths 
+            Welcome to Eigth's 
           </h1>
           <p> Uma rede social não tão diferente do que tem aí</p>
         </div>
@@ -88,16 +76,18 @@ export default function Home() {
                 <p>Faça login com sua conta Google:</p>
 
                 <Button 
+                  onClick={()=>signIn('github',{
+                    callbackUrl:'/profile'
+                  })}
                   sx={{my: 2, width: '50%'}}  
                   variant="outlined" 
                   >
-                    <GoogleIcon className={style.logoGoogle} />
-                  Login com Google
+                    <GithubIcon className={style.logoGoogle} />
+                  Login com GitHub
                 </Button>
             </Box>
         </Paper>
       </Container>
       </Box>
-      </ThemeProvider>
   )
 }

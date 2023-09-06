@@ -5,6 +5,7 @@ import style from './Navbar.module.css'
 import SettingsIcon from '@mui/icons-material/Settings'
 import LogoutIcon from '@mui/icons-material/Logout';
 import IconButton from '@mui/material/IconButton'
+import {signOut} from "next-auth/react"
 
 export default function Navbar(){
     return(
@@ -39,7 +40,11 @@ export default function Navbar(){
                         <IconButton aria-label="setings"  color="primary">
                             <SettingsIcon />
                         </IconButton>
-                        <IconButton aria-label="setings"  color="error">
+                        <IconButton 
+                            onClick={() => signOut({
+                                callbackUrl:'/'
+                            })}
+                            aria-label="setings"  color="error">
                             <LogoutIcon />
                         </IconButton>
                     </Box>

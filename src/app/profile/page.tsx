@@ -9,17 +9,18 @@ import AddBoxIcon from '@mui/icons-material/AddBox'
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from "react"
 import AddPost from "@/components/AddPost";
+import { useSession } from "next-auth/react";
+import Skeleton from '@mui/material/Skeleton';
 
 export default function Profile(){
 
-    
-
+    const {data:session} = useSession()
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return(
-        <>       
+        <>  
         <Navbar/>
         <Box 
             className={style.body}
@@ -38,17 +39,28 @@ export default function Profile(){
                 > 
 
                 <Box>
-                    <p className={style.username}>henrickva</p>
+                    <p className={style.username}>{
+                        session?.user ? 
+                        session?.user?.name : 
+                        <Skeleton variant="rounded" width={140} height={40} />
+                        }
+                    </p>
                     
                     <ul className={style.profileInfo}>
-                        <li>Henrick Amaral</li>
-                        <li className={style.bio}>Escreve alguma coisa aqui de bio</li>
+                        <li>
+                            {
+                                session?.user ?
+                                session?.user?.name : 
+                                <Skeleton sx={{my:1}} variant="rounded" width={140} height={20} /> 
+                            }
+                        </li>
+                        <li className={style.bio}>Bio Here</li>
                     </ul>
                 </Box>
 
-                <Image 
+                <Image
                     className={style.profilePic}
-                    src={profilePic} 
+                    src={session?.user?.image} 
                     alt="profile pic" 
                     width={100}
                     height={100}   
