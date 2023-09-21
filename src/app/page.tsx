@@ -5,16 +5,17 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
 import style from '@/app/page.module.css'
 import { signIn} from 'next-auth/react'
+import Link from 'next/link';
 
 export default function Home(){
   
-
   return (
     <Box 
       className={style.body}
       sx={{
       m: 'auto',
-      display:'flex',
+      display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       }}>
@@ -22,19 +23,21 @@ export default function Home(){
         display:'flex',
         height:'100vh',
         justifyContent: 'center',
+        flexDirection: {xs:'column', md:'row'},
         alignItems: 'center',
+        textAlign:'center'
         }}>
         <div className={style.fundo}>
-          <h1
-            
-            >
+          <h1>
             Welcome to Eigth's 
           </h1>
           <p> Uma rede social não tão diferente do que tem aí</p>
         </div>
          
 
-        <Paper sx={{width: '50%'}}>
+        <Paper sx={{
+          width: {xs:'90%', md:'50%'}
+          }}>
             <Box 
               sx={
               {
@@ -85,6 +88,8 @@ export default function Home(){
                     <GitHubIcon className={style.logoGoogle} />
                   Login com GitHub
                 </Button>
+
+                <p>Dont have an account? <Link className={style.link} href='/cadastro'>Create Account</Link></p>
             </Box>
         </Paper>
       </Container>

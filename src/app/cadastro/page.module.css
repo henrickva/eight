@@ -1,6 +1,6 @@
 .body{
     background-color: whitesmoke;
-    padding: 6em;
+    margin:6em 0 6em 0 ;
     display: flex;
     flex-direction: row;
 }
@@ -13,4 +13,14 @@
 .adress{
     display: flex;
     justify-content: space-between;
+}
+
+.captcha{
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .adress {
+      flex-direction: column;
+    }
 }

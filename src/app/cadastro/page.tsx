@@ -25,8 +25,7 @@ export default function Cadastro(){
     function handleSingIn(e:any){
         e.preventDefault()
         
-    }
-    
+    }    
 
     return (
         <Box
@@ -41,7 +40,10 @@ export default function Cadastro(){
                 }}
                 >
                     <h1 className={style.title}>Seja bem vindo ao eigtht's</h1>
-                    <Paper>
+                    <Paper sx={{
+                        width: {xs:'90%', md:'50%'}
+                        }}
+                    >
                         <Box
                         onSubmit={handleSingIn}
                         sx={
@@ -94,7 +96,10 @@ export default function Cadastro(){
                                 <TextField
                                 label="Country"
                                 variant="filled"
-                                sx={{my:1, mr:1}}
+                                sx={{
+                                    my:1, 
+                                    mr:{xs:'0', md:'1'}
+                                }}
                                 size="small"
                                 onChange={inputValue}
                                 />
@@ -117,7 +122,7 @@ export default function Cadastro(){
                             sx={{my:1}}
                             onChange={inputValue}
                             />
-
+                                                        
 
                             <Button
                             type='submit'
