@@ -112,7 +112,8 @@ export default function Profile(){
                                 </Paper>
                             </Modal>
                     </Box>
-               Postagens vão aqui
+               
+                    Nothing happening here
             </Paper>
             </Container>
         </Box>

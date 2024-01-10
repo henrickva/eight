@@ -3,7 +3,9 @@ import style from '@/app/cadastro/page.module.css'
 import { Box, Paper, Container} from '@mui/material';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
-import { useState } from 'react';
+import { useState, } from 'react';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { authentic } from '@/firebaseConection'
 
 export default function Cadastro(){
 
@@ -17,14 +19,20 @@ export default function Cadastro(){
             bio:""
 
     })
+
+    const[email,setEmail] = useState("")
+    const[password,setPassword] = useState("")
     
     const inputValue = (e:any) => setData({
         ...data, [e.target.name]:e.target.value
     })
     
-    function handleSingIn(e:any){
+    async function handleSingIn(e:any){
         e.preventDefault()
-        
+        await createUserWithEmailAndPassword(authentic,email,password)
+        .then(()=>{console.log('foi')})
+        .catch((error)=>{console.log('n foi'+ error)})
+
     }    
 
     return (
@@ -45,17 +53,17 @@ export default function Cadastro(){
                         }}
                     >
                         <Box
-                        onSubmit={handleSingIn}
-                        sx={
-                        {
-                            p:4,
-                            component:'form',
-                            display:'flex',
-                            flexDirection: 'column',    
-                        }
+                            onSubmit={handleSingIn}
+                            sx={
+                            {
+                                p:4,
+                                component:'form',
+                                display:'flex',
+                                flexDirection: 'column',    
+                            }
                         }>
                         <TextField
-
+                            
                             required
                             label="Name"
                             variant="filled"
@@ -122,11 +130,26 @@ export default function Cadastro(){
                             sx={{my:1}}
                             onChange={inputValue}
                             />
-                                                        
+
+                            
+                            <TextField
+                            label="E-mail"
+                            type='email'
+                            variant='filled'
+                            sx={{my:1}}
+                            onChange={(e) =>setEmail(e.target.value)}
+                            />
+
+                            <TextField
+                            label="Password"
+                            type='password'
+                            variant='filled'
+                            sx={{my:1}}
+                            onChange={(e) =>setPassword(e.target.value)}
+                            />                            
 
                             <Button
                             type='submit'
-                            href='/profile'
                             sx={{my:2}} 
                             color='primary' 
                             variant="outlined"

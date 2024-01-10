@@ -10,5 +10,11 @@
             "city":"Itajubá",
             "bio":"nada"
         }
+    ],
+    "posts":[
+        {
+            "id":1,
+            "post": ""
+        }
     ]
 }
